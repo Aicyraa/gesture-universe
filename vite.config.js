@@ -1,0 +1,8 @@
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  // If you are deploying to https://<USERNAME>.github.io/<REPO>/
+  // Change base to '/<REPO>/'
+  // For now, we use './' which works for most static hosts if not using client-side routing
+  base: './' 
+})

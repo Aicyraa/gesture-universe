@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gesture Universe</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="ui-layer">
+      <h1>Gesture Universe</h1>
+      <div id="status">Loading...</div>
+      <div id="controls">
+        <button id="btn-universe" class="control-btn">Universe</button>
+        <button id="btn-galaxy" class="control-btn">Galaxy</button>
+        <button id="btn-space" class="control-btn">Space</button>
+      </div>
+      <video id="input-video" style="display: none;"></video>
+      <div id="gesture-legend">
+        <div><strong>Right Hand (Switch)</strong></div>
+        <div>🖐️ Palm = Universe</div>
+        <div>✊ Fist = Galaxy</div>
+        <div>✌️ Peace = Space</div>
+        <div style="margin-top: 10px;"><strong>Left Hand (Interact)</strong></div>
+        <div>🤏 Pinch = Zoom</div>
+        <div>🖐️ Move = Rotate</div>
+        <div>✊ Fist = Collapse</div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
