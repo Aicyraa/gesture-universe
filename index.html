@@ -2,32 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#02030a" />
     <title>Gesture Universe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="ui-layer">
-      <h1>Gesture Universe</h1>
-      <div id="status">Loading...</div>
-      <div id="controls">
+      <header>
+        <h1>Gesture <span>Universe</span></h1>
+        <div class="status-row">
+          <span id="status">Loading…</span>
+          <svg id="hold-ring" viewBox="0 0 40 40" aria-hidden="true">
+            <circle class="track" cx="20" cy="20" r="16" />
+            <circle class="arc" cx="20" cy="20" r="16" />
+          </svg>
+        </div>
+      </header>
+
+      <aside id="gesture-legend">
+        <h2>Right hand · switch</h2>
+        <ul>
+          <li><span>🖐️</span> Palm <em>Universe</em></li>
+          <li><span>✊</span> Fist <em>Galaxy</em></li>
+          <li><span>✌️</span> Peace <em>Space</em></li>
+        </ul>
+        <h2>Left hand · interact</h2>
+        <ul>
+          <li><span>🖐️</span> Move palm <em>Rotate</em></li>
+          <li><span>🤏</span> Pinch + up/down <em>Zoom</em></li>
+          <li><span>✊</span> Fist <em>Collapse</em></li>
+        </ul>
+        <p class="hint">Or drag · scroll · keys 1 2 3</p>
+      </aside>
+
+      <div id="hand-panel">
+        <canvas id="hand-overlay" width="240" height="180"></canvas>
+      </div>
+
+      <nav id="controls">
         <button id="btn-universe" class="control-btn">Universe</button>
         <button id="btn-galaxy" class="control-btn">Galaxy</button>
         <button id="btn-space" class="control-btn">Space</button>
-      </div>
-      <video id="input-video" style="display: none;"></video>
-      <div id="gesture-legend">
-        <div><strong>Right Hand (Switch)</strong></div>
-        <div>🖐️ Palm = Universe</div>
-        <div>✊ Fist = Galaxy</div>
-        <div>✌️ Peace = Space</div>
-        <div style="margin-top: 10px;"><strong>Left Hand (Interact)</strong></div>
-        <div>🤏 Pinch = Zoom</div>
-        <div>🖐️ Move = Rotate</div>
-        <div>✊ Fist = Collapse</div>
-      </div>
+      </nav>
+      <video id="input-video" playsinline style="display: none"></video>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
